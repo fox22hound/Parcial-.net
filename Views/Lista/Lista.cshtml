@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Parcial2.Models.Listado>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Listado</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CondIva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cuit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RazonSocial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Domicilio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CondVenta)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CondIva)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cuit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RazonSocial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Domicilio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CondVenta)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Cuit">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Cuit">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Cuit">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
